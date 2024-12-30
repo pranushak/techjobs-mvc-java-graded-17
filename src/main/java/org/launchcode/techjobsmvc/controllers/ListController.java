@@ -61,5 +61,11 @@ public class ListController {
         model.addAttribute("jobs", jobs);
         return "list-jobs";
     }
+    @GetMapping("byColumnType")
+    public String searchByColumn(Model model, @RequestParam("value") String value){
+        ArrayList<Job> jobs = JobData.findByValue(value);
+        model.addAttribute("jobs", jobs);
+        return "list-jobs";
+    }
 }
 

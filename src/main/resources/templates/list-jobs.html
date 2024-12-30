@@ -11,6 +11,7 @@
   <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
   <!-- TODO #1 - Use a loop to display job results in a table. -->
+  <div th:fragment="jobs-list">
   <table class="job-listing" th:each="job : ${jobs}">
     <th:block>
       <tr>
@@ -22,25 +23,35 @@
         <td th:text="${job.name}"></td>
       </tr>
       <tr>
-        <th>Employer</th>
-        <td th:text="${job.employer.value}"></td>
+        <th th:text="${#strings.capitalizeWords('Employer') + ' :'}"></th>
+        <td><a th:href="@{/list/byColumnType(value=${job.employer.value})}"  th:text="${job.employer.value}">
+        </a>
+        </td>
       </tr>
       <tr>
-        <th>Location</th>
-        <td th:text="${job.location.value}"></td>
+        <th th:text="${#strings.capitalizeWords('Location') + ' :'}"></th>
+        <td><a th:href="@{/list/byColumnType(value=${job.location.value})}"  th:text="${job.employer.value}">
+        </a>
+        </td>
       </tr>
       <tr>
-        <th>Position Type</th>
-        <td th:text="${job.positionType.value}"></td>
+        <th th:text="${#strings.capitalizeWords('Position Type') + ' :'}"></th>
+        <td><a th:href="@{/list/byColumnType(value=${job.positionType.value})}">
+          <span th:text="${job.positionType.value}"></span>
+        </a>
+        </td>
       </tr>
       <tr>
-        <th>Skill</th>
-        <td th:text="${job.coreCompetency.value}"></td>
+        <th th:text="${#strings.capitalizeWords('Skill')}"></th>
+        <td><a th:href="@{/list/byColumnType(value=${job.coreCompetency.value})}">
+          <span th:text="${job.coreCompetency.value}"></span>
+        </a>
+        </td>
       </tr>
     </th:block>
 
   </table>
-
+</div>
 </div>
 </body>
 </html>
