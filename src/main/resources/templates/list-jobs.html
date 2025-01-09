@@ -23,28 +23,27 @@
         <td th:text="${job.name}"></td>
       </tr>
       <tr>
-        <th th:text="${#strings.capitalizeWords('Employer') + ' :'}"></th>
-        <td><a th:href="@{/list/byColumnType(value=${job.employer.value})}"  th:text="${job.employer.value}">
+        <th th:text="${#strings.capitalizeWords('Employer')}"></th>
+        <td>
+          <a th:href="@{/list/byColumnType(value=${job.employer.value})}" th:text="${job.employer.value}">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <th th:text="${#strings.capitalizeWords('Location')}"></th>
+        <td><a th:href="@{/list/byColumnType(value=${job.location.value})}" th:text="${job.location.value}">
         </a>
         </td>
       </tr>
       <tr>
-        <th th:text="${#strings.capitalizeWords('Location') + ' :'}"></th>
-        <td><a th:href="@{/list/byColumnType(value=${job.location.value})}"  th:text="${job.employer.value}">
-        </a>
-        </td>
-      </tr>
-      <tr>
-        <th th:text="${#strings.capitalizeWords('Position Type') + ' :'}"></th>
-        <td><a th:href="@{/list/byColumnType(value=${job.positionType.value})}">
-          <span th:text="${job.positionType.value}"></span>
+        <th th:text="${#strings.capitalizeWords('Position Type')}"></th>
+        <td><a th:href="@{/list/byColumnType(value=${job.positionType.value})}" th:text="${job.positionType.value}">
         </a>
         </td>
       </tr>
       <tr>
         <th th:text="${#strings.capitalizeWords('Skill')}"></th>
-        <td><a th:href="@{/list/byColumnType(value=${job.coreCompetency.value})}">
-          <span th:text="${job.coreCompetency.value}"></span>
+        <td><a th:href="@{/list/byColumnType(value=${job.coreCompetency.value})}" th:text="${job.coreCompetency.value}">
         </a>
         </td>
       </tr>
