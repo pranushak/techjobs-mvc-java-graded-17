@@ -23,7 +23,6 @@
                         th:checked="${column.key == searchType}"/>
                 <label th:for="${column.key}" th:text="${column.value}"></label>
             </span>
-
     </p>
 
     <p>
@@ -35,7 +34,6 @@
   </form>
 
   <hr />
-
     <div th:replace="~{list-jobs :: jobs-list}"></div>
 </div>
 </body>

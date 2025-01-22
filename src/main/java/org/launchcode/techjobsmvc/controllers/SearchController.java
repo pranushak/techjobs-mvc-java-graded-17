@@ -21,7 +21,7 @@ import static org.launchcode.techjobsmvc.controllers.ListController.columnChoice
  */
 @Controller
 @RequestMapping("search")
-public class SearchController {
+public class SearchController extends TechJobsController {
 
     @GetMapping(value = "")
     public String search(Model model) {
@@ -43,6 +43,7 @@ public class SearchController {
         }
         model.addAttribute("columns", ListController.columnChoices);
         model.addAttribute("jobs", jobs);
+        model.addAttribute("No Results", "No results");
         return "search";
     }
 //    @GetMapping("byLocation")
